@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <script src="/app/script/script.js" defer></script>
+    <title>Frontend Mentor | Launch countdown timer</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>We're launching soon</h1>
+      </header>
+      <main>
+        <div class="days-container show-timer">
+          <div class="box">
+            <div class="box-1"></div>
+            <div class="box-number day"></div>
+            <div class="box-2"></div>
+            <div class="box-line"></div>
+          </div>
+          <p>days</p>
+        </div>
+
+        <div class="hour-container show-timer">
+          <div class="box">
+            <div class="box-1"></div>
+            <div class="box-number hour"></div>
+            <div class="box-2"></div>
+            <div class="box-line"></div>
+          </div>
+          <p>hours</p>
+        </div>
+
+        <div class="minute-container show-timer">
+          <div class="box">
+            <div class="box-1"></div>
+            <div class="box-number min"></div>
+            <div class="box-2"></div>
+            <div class="box-line"></div>
+          </div>
+          <p>minutes</p>
+        </div>
+
+        <div class="second-container show-timer">
+          <div class="box">
+            <div class="box-1"></div>
+            <div class="box-number sec"></div>
+            <div class="box-2"></div>
+            <div class="box-line"></div>
+          </div>
+          <p>seconds</p>
+        </div>
+      </main>
+      <footer>
+        <div class="social-icon">
+          <svg class="icon">
+            <use xlink:href="/images/social-icon.svg#icon-facebook"></use></svg
+          ><svg class="icon">
+            <use xlink:href="/images/social-icon.svg#icon-instagram"></use></svg
+          ><svg class="icon">
+            <use xlink:href="/images/social-icon.svg#icon-pinterest"></use>
+          </svg>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

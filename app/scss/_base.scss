@@ -1,0 +1,96 @@
+// mixins
+$breakpoint-up: (
+  "small": 30em,
+  "medium": 49.125em,
+  "large": 62rem,
+  "exlarge": 75rem,
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+
+:root {
+  --primaryColor1: hsl(237, 18%, 59%);
+  --primaryColor2: hsl(345, 95%, 68%);
+  --neutralColor1: hsl(0, 0%, 100%);
+  --neutralColor2: hsl(236, 21%, 26%);
+  --neutralColor3: hsl(235, 16%, 14%);
+  --neutralColor4: hsl(234, 17%, 12%);
+  --background-gradient: linear-gradient(
+    180deg,
+    hsl(240, 14%, 14%),
+    hsl(272, 21%, 14%)
+  );
+
+  --fs-base: 0.875rem;
+  --fs-heading: 1rem;
+  --fs-box-num: 2.25rem;
+  --fs-para: 0.5rem;
+
+  @include breakpoint-up(small) {
+    --fs-heading: 1.25rem;
+    --fs-para: 0.5rem;
+  }
+
+  @include breakpoint-up(medium) {
+    --fs-heading: 1.5rem;
+    --fs-box-num: 5rem;
+    --fs-para: 0.75rem;
+  }
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}

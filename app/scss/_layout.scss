@@ -1,0 +1,182 @@
+@use "./base" as u;
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background-image: var(--background-gradient);
+}
+
+.container {
+  height: 100%;
+  padding-top: 6rem;
+  background-image: url("/images/bg-stars.svg");
+}
+
+header {
+  margin-bottom: 3.75rem;
+  h1 {
+    font-size: var(--fs-heading);
+    text-align: center;
+    color: var(--neutralColor1);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+  }
+}
+
+main {
+  height: 53%;
+  max-width: 20.4375rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+
+  @include u.breakpoint-up(medium) {
+    max-width: 41.75rem;
+  }
+}
+
+p {
+  text-align: center;
+  font-size: var(--fs-para);
+  font-weight: 700;
+  color: var(--primaryColor1);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.days-container,
+.hour-container,
+.minute-container,
+.second-container {
+  position: relative;
+}
+
+.box {
+  position: relative;
+  margin-bottom: 0.5rem;
+
+  @include u.breakpoint-up(medium) {
+    margin-bottom: 0.75rem;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--neutralColor4);
+
+    @include u.breakpoint-up(medium) {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 46%;
+    left: -6%;
+    clip-path: inset(0 0 0 50%);
+
+    @include u.breakpoint-up(medium) {
+      top: 46%;
+      left: -4%;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 41%;
+    right: -6%;
+    clip-path: inset(0 50% 0 0);
+
+    @include u.breakpoint-up(medium) {
+      bottom: 45%;
+      right: -4%;
+    }
+  }
+}
+
+.box-1 {
+  width: 4.375rem;
+  height: 2.0625rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  background-color: hsl(240, 22%, 22%);
+  box-shadow: 0px -3px 1px var(--neutralColor4);
+
+  @include u.breakpoint-up(medium) {
+    width: 9.25rem;
+    height: 4.375rem;
+    box-shadow: 0px -6px 1px var(--neutralColor4);
+  }
+}
+
+.box-2 {
+  width: 4.375rem;
+  height: 2.0625rem;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+
+  background-color: hsl(240, 22%, 22%);
+  box-shadow: 0px 5px 1px var(--neutralColor4);
+
+  @include u.breakpoint-up(medium) {
+    width: 9.25rem;
+    height: 4.375rem;
+    box-shadow: 0px 10px 1px var(--neutralColor4);
+  }
+}
+
+.box-number {
+  font-size: var(--fs-box-num);
+  color: var(--primaryColor2);
+  position: absolute;
+  inset: 10% 0% 0% 18%;
+  z-index: 1;
+
+  @include u.breakpoint-up(medium) {
+    inset: 7% 0% 0% 12%;
+  }
+}
+
+.box-line {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 4.375rem;
+  background-color: var(--neutralColor4);
+  z-index: 1;
+  opacity: 30%;
+
+  @include u.breakpoint-up(medium) {
+    width: 9.25rem;
+  }
+}
+
+footer {
+  height: 30%;
+  background-image: url("/images/pattern-hills.svg");
+  background-repeat: no-repeat;
+}
+
+.social-icon {
+  height: 100%;
+  max-width: 8.5rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: var(--primaryColor1);
+    transition: 200ms ease-in;
+
+    &:hover {
+      cursor: pointer;
+      fill: var(--primaryColor2);
+    }
+  }
+}
