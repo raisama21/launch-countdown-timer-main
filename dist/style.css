@@ -89,13 +89,15 @@ body {
 }
 
 .container {
-  height: 100%;
-  padding-top: 6rem;
+  min-height: 100vh;
   background-image: url("/images/bg-stars.svg");
+  display: grid;
 }
 
 header {
-  margin-bottom: 3.75rem;
+  display: flex;
+  align-items: flex-end;
+  margin-inline: auto;
 }
 header h1 {
   font-size: var(--fs-heading);
@@ -107,15 +109,17 @@ header h1 {
 }
 
 main {
-  height: 53%;
   max-width: 20.4375rem;
   margin-inline: auto;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
 }
 @media (min-width: 49.125em) {
   main {
     max-width: 41.75rem;
+    gap: 1.5rem;
+    align-items: flex-end;
   }
 }
 
@@ -242,9 +246,10 @@ p {
 }
 
 footer {
-  height: 30%;
+  align-self: end;
   background-image: url("/images/pattern-hills.svg");
   background-repeat: no-repeat;
+  height: 196px;
 }
 
 .social-icon {
